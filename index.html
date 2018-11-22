@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Drawing graph from your GitHub data.">
+    <title>GitHub Graph</title>
+
+    <!-- external libs -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.min.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js'></script>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+  <body>
+
+    <section class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <h1 class="title">
+            GitHub Graph
+          </h1>
+          <h2 class="subtitle">
+            Summary by language
+          </h2>
+
+          <!-- graph -->
+          <div id='chart-wrapper'>
+            <canvas id="myChart"></canvas>
+          </div>
+
+          <!-- title + input text -->
+          <br />
+          <p class="control has-addons has-addons-centered">
+            <input id='username' class="input" type="text" placeholder="Enter username" value='AzharMithani'>
+            <a id='search' class="button is-info">
+              Search
+            </a>
+          </p>
+
+          <p class="control has-addons has-addons-centered">
+            <span class="select">
+              <select id='git_type'>
+                <option value='repos'>repos</option>
+                <option value='starred'>starred</option>
+              </select>
+            </span>
+            <span class="select">
+              <select id='graph_type'>
+                <option value='line'>line</option>
+                <option value='bar'>bar</option>
+                <option value='radar'>radar</option>
+                <option value='polarArea'>polar</option>
+                <option value='pie'>pie</option>
+                <option value='doughnut'>doughnut</option>
+              </select>
+            </span>
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- execute app -->
+    <script src='./app.js'></script>
+
+    <!-- github ribbon -->
+    <a href="#"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
+
+  </body>
+</html>
